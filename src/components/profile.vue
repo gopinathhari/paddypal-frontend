@@ -8,7 +8,15 @@
       <v-btn flat>Link One</v-btn>
       <v-btn flat>Link Two</v-btn>
       <v-btn flat>Link Two</v-btn>
-      <v-btn flat>Link Two</v-btn>
+      <v-btn flat dark ><v-badge overlap >
+      <span slot="badge" style="color:green;">3</span>
+
+      <v-avatar
+        color="purple red--after"
+      >
+        <v-icon dark >notifications</v-icon>
+      </v-avatar>
+    </v-badge></v-btn>
       <v-btn ><v-avatar color="green">
       <v-icon >account_circle</v-icon>
     </v-avatar></v-btn>
