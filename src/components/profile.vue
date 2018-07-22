@@ -1,20 +1,23 @@
 <template>
-
-  <v-layout column>
-    <v-toolbar>
+<v-app id="inspire">
+  <v-toolbar style="color:#000000;" dark>
+    <v-toolbar-side-icon></v-toolbar-side-icon>
+    <h1 style="color:#76FF03;font-family:Trasandina">PaddyPal</h1>
     <v-spacer></v-spacer>
-
-    <v-toolbar-items>
+    <v-toolbar-items class="hidden-sm-and-down">
       <v-btn flat>Link One</v-btn>
       <v-btn flat>Link Two</v-btn>
-      <v-btn flat>Link Three</v-btn>
+      <v-btn flat>Link Two</v-btn>
+      <v-btn flat>Link Two</v-btn>
+      <v-btn ><v-avatar color="green">
+      <v-icon >account_circle</v-icon>
+    </v-avatar></v-btn>
     </v-toolbar-items>
   </v-toolbar>
+  <v-layout column>
     <v-flex xs12 sm6 >
 
       <v-spacer></v-spacer>
-
-
 
       <v-card>
         <v-container
@@ -58,7 +61,7 @@
       </v-card>
     </v-flex>
   </v-layout>
-
+</v-app>
 </template>
 <script>
 

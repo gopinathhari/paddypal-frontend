@@ -1,16 +1,17 @@
 <template>
   <v-app id="inspire">
-    <div  class="circular" style="height:620px;" v-bind:style="{'background-image': 'url(' + 'http://sigmarecruitment.co.uk/media/iStock_000002215083Medium.jpg' + ')'}">
+
+    <div  class="circular" style="height:620px;" v-bind:style="{'background-image': 'url(' + 'http://miriadna.com/desctopwalls/images/max/Green-and-yellow-fields.jpg' + ')'}">
       <v-content>
         <v-container fluid fill-height >
           <v-layout align-center justify-center >
-           <v-flex xs12 sm8 md5>
-              <v-card class="elevation-12" id="login">
-                <v-toolbar dark color="light-blue">
-                  <v-toolbar-title>Login form</v-toolbar-title>
+           <v-flex xs12 sm8 md5 >
+              <v-card class="elevation-12" id="login" dark  >
+                <v-toolbar dark >
+                  <v-toolbar-title style="font-family:Patua One;">Login </v-toolbar-title>
                   <v-spacer></v-spacer>
                 </v-toolbar>
-              <v-card-text >
+              <v-card-text  >
                 <v-form ref="form"  lazy-validation>
                   <v-text-field
                     v-model="send.userName"
@@ -74,7 +75,7 @@ import axios from "axios";
                 this.$router.push('/profile');
             })
             .catch(error =>{
-              console.log(error.parse)
+              console.log(error.response)
             });
 
 

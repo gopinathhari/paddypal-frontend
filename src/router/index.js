@@ -10,12 +10,15 @@ import Farmers from '@/components/farmers'
 import Farmdetails from '@/components/farmdetails'
 import Map from '@/components/map'
 import Appdownload from '@/components/appdownload'
+
+
+
 Vue.use(Router)
 export default new Router({
   routes: [
     {
       path: '/',
-      name: '/Home',
+      name: '/home',
       component: Home
     },
 
