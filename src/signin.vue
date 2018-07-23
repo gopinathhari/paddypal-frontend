@@ -53,7 +53,7 @@ import axios from "axios";
  export default {
     data () {
       return {
-        e6: 1,
+
         send:{
 
        }
@@ -68,7 +68,7 @@ import axios from "axios";
             console.log(this.send);
 
             let uri ='http://173.82.212.198:8095/keycloak/login';
-          axios.post(uri,{send:this.send})
+          axios.post(uri,this.send)
             .then(response => {
 
                 console.log(response)

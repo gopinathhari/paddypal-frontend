@@ -131,6 +131,7 @@ import axios from "axios";
           axios({ method: "POST", "url": "http://173.82.212.198:8095/keycloak/create", "data": this.user, "headers": { "content-type": "application/json" } })
             .then(result => {
                 console.log(result);
+                this.$router.push('/signin');
             }, error => {
                 console.error;
             });
