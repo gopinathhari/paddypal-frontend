@@ -71,11 +71,16 @@ import axios from "axios";
           axios.post(uri,this.send)
             .then(response => {
 
-                console.log(response)
-                this.$router.push('/profile');
+                console.log(response.data.object.token.access_token)
+                if(response.data.object.token.access_token !=null){
+                  this.$router.push('/profile');
+
+                }
+
             })
             .catch(error =>{
               console.log(error.response)
+
             });
 
 
