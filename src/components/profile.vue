@@ -1,7 +1,8 @@
 <template>
 <v-app id="inspire">
+
   <v-toolbar style="color:#000000;" dark>
-    <v-toolbar-side-icon></v-toolbar-side-icon>
+    <v-toolbar-side-icon @click.native="drawer = !drawer"></v-toolbar-side-icon>
     <h1 style="color:#76FF03;font-family:Trasandina">PaddyPal</h1>
     <v-spacer></v-spacer>
     <v-toolbar-items class="hidden-sm-and-down">
@@ -22,6 +23,51 @@
     </v-avatar></v-btn>
     </v-toolbar-items>
   </v-toolbar>
+  <v-navigation-drawer
+      temporary
+      clipped
+      class="grey lighten-4"
+      v-model="drawer"
+      fixed
+      app
+      >
+      <v-list
+        dense
+        class="grey lighten-4"
+      >
+        <template v-for="(item, i) in items">
+          <v-layout
+            row
+            v-if="item.heading"
+            align-center
+            :key="i"
+          >
+
+          </v-layout>
+          <v-divider
+            dark
+            v-else-if="item.divider"
+            class="my-3"
+            :key="i"
+          ></v-divider>
+          <v-list-tile
+            :key="i"
+            v-else
+          :to="item.link"
+          >
+            <v-list-tile-action>
+              <v-icon>{{ item.icon }}</v-icon>
+            </v-list-tile-action>
+            <v-list-tile-content>
+              <v-list-tile-title class="grey--text">
+                {{ item.text }}
+              </v-list-tile-title>
+            </v-list-tile-content>
+          </v-list-tile>
+        </template>
+      </v-list>
+    </v-navigation-drawer>
+
   <v-layout column>
     <v-flex xs12 sm6 >
 
@@ -75,6 +121,7 @@
 
   export default {
     data: () => ({
+      drawer:null,
       cards: [
         { title: 'Home', src: 'http://www.veryrustic.com/wp-content/uploads/2015/10/1a.jpg', flex: 3,link:"/home"  },
         { title: 'Farmers Details', src: 'https://www.thenational.ae/image/policy:1.261574:1499419181/image/jpeg.jpg?f=16x9&w=1024&$p$f$w=2589da4', flex: 3, link:"/farmdetails" },
@@ -87,8 +134,26 @@
         { title: 'Feedback', src: 'https://www.questionpro.com/blog/wp-content/uploads/2016/05/bigstock-Feedback-Concept-with-Doodle-D-120765935-1-800x450.jpg', flex: 3 }
 
 
-      ]
+      ],
 
+      items: [
+        { icon: 'home', text: 'Login',link: "/signin" },
+        { icon: 'home', text: 'Logout',link: "/signin" },
+        { icon: 'account_box', text: 'Profile',link: "/profile" },
+       { divider: true },
+        { heading: 'Labels' },
+        { icon: 'face', text: 'Create new Account',link: "/createnew" },
+      { divider: true },
+        { icon: 'nature_people', text: 'Farmers',link: "/farmdetails" },
+
+        { divider: true },
+
+
+        { icon: 'phonelink', text: 'App downloads',link: "/appdownload" },
+
+      ]
     })
+
+
   }
 </script>
